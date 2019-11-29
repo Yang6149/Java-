@@ -33,6 +33,7 @@ public class AioServer {
                     result.read(buffer).get(100, TimeUnit.SECONDS);
                     buffer.flip();
                     writeResult=result.write(buffer);
+                    System.out.println("AioServer return");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } catch (ExecutionException e) {
@@ -61,7 +62,10 @@ public class AioServer {
         });
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         new AioServer().start();
+        while (true){
+            Thread.sleep(1000);
+        }
     }
 }
