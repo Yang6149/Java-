@@ -15,5 +15,6 @@ public class ConsurMethodRef {
             array.add(uf.create(i,"a","b"));
         }
         array.stream().map(User::getId).forEach(System.out::println);
+        System.out.println(Math.sqrt(16d));
     }
 }
